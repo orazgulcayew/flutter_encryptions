@@ -15,7 +15,7 @@ class FirstScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const Text('Start ecrypt and decrypting'),
+            const Text('Programmamyz arkaly heşlemäge başla'),
             Image.asset('assets/1.jpg'),
             const Gap(12),
             CupertinoButton(
@@ -27,7 +27,7 @@ class FirstScreen extends StatelessWidget {
                           builder: (context) => const EncryptionsScreen()));
                 },
                 child: const Text(
-                  'Next',
+                  'Başla',
                 ))
           ],
         ),

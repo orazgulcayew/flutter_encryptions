@@ -1,7 +1,6 @@
 import 'package:encryption/aes_enrypt.dart';
-import 'package:encryption/diffie_hellman_encryption.dart';
+import 'package:encryption/aes_file.dart';
 import 'package:encryption/fibonacci.dart';
-import 'package:encryption/image_encryption.dart';
 import 'package:flutter/material.dart';
 
 class EncryptionsScreen extends StatelessWidget {
@@ -11,7 +10,7 @@ class EncryptionsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Encryption types"),
+        title: const Text("Heş görnüşleri"),
       ),
       body: SafeArea(
           child: Column(
@@ -20,9 +19,8 @@ class EncryptionsScreen extends StatelessWidget {
           ListTile(
             leading: const Icon(Icons.lock),
             trailing: const Icon(Icons.chevron_right),
-            title: const Text('AES Encryption'),
-            subtitle:
-                const Text('Encrypt and decrypt data using AES algorithm'),
+            title: const Text('AES Heşleýji'),
+            subtitle: const Text('AES algoritmi arkaly tekstleri heşlemek'),
             onTap: () {
               // Navigate to AES Encryption Screen
               // You can implement navigation here
@@ -30,19 +28,35 @@ class EncryptionsScreen extends StatelessWidget {
             },
           ),
           ListTile(
+            leading: const Icon(Icons.file_copy),
             trailing: const Icon(Icons.chevron_right),
-            leading: const Icon(Icons.image),
-            title: const Text('Photo & Image Encryption'),
-            subtitle:
-                const Text('Secure your photos and images with encryption'),
+            title: const Text('AES Heşleýji'),
+            subtitle: const Text('AES algoritmi arkaly faýllary heşlemek'),
             onTap: () {
-              // Navigate to Photo/ Image Encryption Screen
+              // Navigate to AES Encryption Screen
               // You can implement navigation here
-              openPage(context, const ImageHashingPage());
-
-              print('Navigate to Photo/ Image Encryption Screen');
+              openPage(
+                  context,
+                  const FileEncrPage(
+                    title: "AES Faýl heşleýji",
+                    ext: "aes",
+                  ));
             },
           ),
+          // ListTile(
+          //   trailing: const Icon(Icons.chevron_right),
+          //   leading: const Icon(Icons.image),
+          //   title: const Text('Photo & Image Encryption'),
+          //   subtitle:
+          //       const Text('Secure your photos and images with encryption'),
+          //   onTap: () {
+          //     // Navigate to Photo/ Image Encryption Screen
+          //     // You can implement navigation here
+          //     openPage(context, const ImageHashingPage());
+
+          //     print('Navigate to Photo/ Image Encryption Screen');
+          //   },
+          // ),
           // ListTile(
           //   trailing: const Icon(Icons.chevron_right),
           //   leading: const Icon(Icons.videocam),
@@ -54,30 +68,46 @@ class EncryptionsScreen extends StatelessWidget {
           //     print('Navigate to Video/ Audio Encryption Screen');
           //   },
           // ),
+          // ListTile(
+          //   trailing: const Icon(Icons.chevron_right),
+          //   leading: const Icon(Icons.vpn_key),
+          //   title: const Text('Diffie-Hellman Encryption'),
+          //   subtitle: const Text(
+          //       'Implement secure key exchange using Diffie-Hellman'),
+          //   onTap: () {
+          //     // Navigate to Diffie-Hellman Encryption Screen
+          //     // You can implement navigation here
+          //     openPage(context, const DiffieHellmanPage());
+          //     print('Navigate to Diffie-Hellman Encryption Screen');
+          //   },
+          // ),
           ListTile(
             trailing: const Icon(Icons.chevron_right),
-            leading: const Icon(Icons.vpn_key),
-            title: const Text('Diffie-Hellman Encryption'),
+            leading: const Icon(Icons.file_copy),
+            title: const Text('Fibonaçi yzygiderligi arkaly heşleýji'),
             subtitle: const Text(
-                'Implement secure key exchange using Diffie-Hellman'),
+                'Fibonaçi yzygiderligini ulanmak arkaly faýllary heşläň ýa-da heşlenen faýly açyň'),
             onTap: () {
-              // Navigate to Diffie-Hellman Encryption Screen
+              // Navigate to File Encryption Screen
               // You can implement navigation here
-              openPage(context, const DiffieHellmanPage());
-              print('Navigate to Diffie-Hellman Encryption Screen');
+              openPage(
+                  context,
+                  const FileEncrPage(
+                    title: "Fibonaçi faýl heşleýji",
+                    ext: "fib",
+                  ));
+              print('Navigate to File Encryption Screen');
             },
           ),
           ListTile(
             trailing: const Icon(Icons.chevron_right),
-            leading: const Icon(Icons.file_copy),
-            title: const Text('File Encryption with Fibonacci Series'),
-            subtitle: const Text(
-                'Encrypt files using Fibonacci series based encryption'),
+            leading: const Icon(Icons.text_snippet_rounded),
+            title: const Text('PDF goraýjy'),
+            subtitle: const Text('PDF faýllary öz şahsy goragyňyzy goşuň'),
             onTap: () {
               // Navigate to File Encryption Screen
               // You can implement navigation here
-              openPage(context, const FibonacciScreen());
-              print('Navigate to File Encryption Screen');
+              openPage(context, const PDFFibonacciScreen());
             },
           ),
         ],

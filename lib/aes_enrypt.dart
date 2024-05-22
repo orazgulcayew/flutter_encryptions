@@ -15,7 +15,7 @@ class AESEncryptScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Encryption App'),
+        title: const Text('AES tekst heşleýji'),
       ),
       body: SafeArea(
         child: Padding(
@@ -33,7 +33,7 @@ class AESEncryptScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20),
                       // Change defaut border color
                     ),
-                    labelText: 'Enter text to encrypt',
+                    labelText: 'Heşlemek üçin tekst giriziň',
                     labelStyle: const TextStyle(
                         fontSize: 20, fontWeight: FontWeight.w500)),
               ),
@@ -51,7 +51,7 @@ class AESEncryptScreen extends StatelessWidget {
                     encryptedTextController.text = encrypted.base64;
                   },
                   child: const Text(
-                    'Encrypt',
+                    'Heşle',
                     style: TextStyle(fontSize: 18),
                   ),
                 ),
@@ -68,7 +68,7 @@ class AESEncryptScreen extends StatelessWidget {
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
-                    labelText: 'Encrypted Text',
+                    labelText: 'Heşdem açmak üçin tekst giriziň',
                     labelStyle: const TextStyle(
                         fontSize: 20, fontWeight: FontWeight.w500)),
               ),
@@ -89,7 +89,7 @@ class AESEncryptScreen extends StatelessWidget {
                     plainTextController.text = decrypted;
                   },
                   child: const Text(
-                    'Decrypt',
+                    'Heşden aç',
                     style: TextStyle(fontSize: 18),
                   ),
                 ),
